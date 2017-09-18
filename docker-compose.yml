@@ -1,6 +1,6 @@
 version: '3'
 services:
-    hashview::
+    hashview:
         build: .
         container_name: hashview
         dockerfile: hashview.docker
