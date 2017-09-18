@@ -1,14 +1,3 @@
-    hashview:
-        build: .
-        container_name: hashview
-        dockerfile: hashview.docker
-        links:
-            - mysqldb
-        ports:
-            - "4567:4567"
-        restart: always
-
-
     mysqldb:
         image: mysql
         container_name: mysqldb
@@ -25,3 +14,17 @@
             - "3306:3306"
         volumes:
             - "./data/db/mysql:/var/lib/mysql"
+
+
+
+    hashview:
+        build: .
+        container_name: hashview
+        dockerfile: hashview.docker
+        links:
+            - mysqldb
+        ports:
+            - "4567:4567"
+        restart: always
+
+
