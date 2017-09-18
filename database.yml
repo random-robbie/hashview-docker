@@ -1,6 +1,6 @@
 production:
   adapter: mysql
-  hostname: "hashview_db"
+  hostname: "mysqldb"
   port: 3306
   user: "hashview"
   password: "hashview"
