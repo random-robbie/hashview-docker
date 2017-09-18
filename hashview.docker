@@ -27,3 +27,5 @@ RUN gem install bundler
 RUN bundle config --global silence_root_warning 1
 RUN bundle install
 ADD  database.yml ./config/database.yml
+RUN RACK_ENV=production rake db:setup		
+ENTRYPOINT ["RACK_ENV=production foreman start"]
