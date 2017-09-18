@@ -1,5 +1,3 @@
-version: '3'
-services:
     hashview:
         build: .
         container_name: hashview
