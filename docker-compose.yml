@@ -1,5 +1,5 @@
     mysqldb:
-        image: mysql
+        image: mysqldb
         container_name: mysqldb
         restart: always
         hostname: mysqldb
@@ -21,6 +21,8 @@
 
 
     hashview:
+        depends_on:
+            - mysqldb
         build: .
         container_name: hashview
         dockerfile: hashview.docker
