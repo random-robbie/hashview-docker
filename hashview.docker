@@ -21,3 +21,4 @@ ADD  database.yml ./config/database.yml
 ADD agent_config.json ./config/agent_config.json
 EXPOSE 4567
 RUN RACK_ENV=production rake db:setup
+ENTRYPOINT ["RACK_ENV=production TZ='Europe/London' foreman start"]
