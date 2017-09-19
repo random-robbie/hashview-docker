@@ -3,9 +3,8 @@ ENV http_proxy=
 ENV https_proxy=
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
-#RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:graphics-drivers/ppa
 RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \ 
-wget git nvidia-opencl-icd-381 build-essential openssl libreadline6 libreadline6-dev curl mysql-client libmysqlclient-dev redis-server openssl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison nodejs subversion
+wget git build-essential openssl libreadline6 libreadline6-dev curl mysql-client libmysqlclient-dev redis-server openssl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison nodejs subversion
 WORKDIR /home
 RUN git clone https://github.com/hashcat/hashcat.git
 RUN cd hashcat && \
@@ -13,13 +12,7 @@ git submodule update --init
 RUN cd hashcat
 RUN ln -s /root/hashcat/hashcat-cli64.bin /usr/bin/hashcat
 WORKDIR /tmp/
-#RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
-#RUN tar xvfz ruby-2.2.2.tar.gz
-#WORKDIR /tmp/ruby-2.2.2/
-#RUN ./configure
-#RUN make
-#RUN make install
-#RUN gem update --system
+RUN gem update --system
 WORKDIR / 
 RUN git clone https://github.com/hashview/hashview
 WORKDIR /hashview/
