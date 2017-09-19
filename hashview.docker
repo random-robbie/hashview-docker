@@ -3,7 +3,7 @@ ENV http_proxy=
 ENV https_proxy=
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
-RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:graphics-drivers/ppa
+#RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:graphics-drivers/ppa
 RUN apt-get update && apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \ 
 wget git nvidia-opencl-icd-381 build-essential openssl libreadline6 libreadline6-dev curl mysql-client libmysqlclient-dev redis-server openssl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison nodejs subversion
 WORKDIR /home
