@@ -15,5 +15,5 @@
     links:
       - mysql:mysql
     ports:
-      - "4567"
+      - "4567:4567"
     restart: always
