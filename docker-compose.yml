@@ -1,3 +1,6 @@
+version: '3'
+services:
+    
     mysqldb:
         image: mysqldb
         container_name: mysqldb
@@ -17,7 +20,8 @@
             - "3306"
         volumes:
             - "./data/db/mysql:/var/lib/mysql"
-
+       networks:
+            - backend
 
 
     hashview:
@@ -31,5 +35,8 @@
         ports:
             - "4567"
         restart: always
-
-
+        networks:
+           - frontend
+networks:
+   frontend:
+   backend:
