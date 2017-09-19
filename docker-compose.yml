@@ -20,8 +20,6 @@
 
 
     hashview:
-        depends_on:
-            - mysqldb
         build: .
         container_name: hashview
         dockerfile: hashview.docker
