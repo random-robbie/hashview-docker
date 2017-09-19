@@ -16,7 +16,7 @@ services:
     links:
       - mysql:mysql
     ports:
-	  - "4567"
+      - "4567"
     depends_on:
       - mysql
     restart: always
