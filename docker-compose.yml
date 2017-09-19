@@ -5,7 +5,7 @@
       - MYSQL_USER=hashview
       - MYSQL_PASSWORD=hashview
       - MYSQL_DATABASE=hashview
-    expose:
+    ports:
       - "3306:3306"
     restart: always
    hashview:
