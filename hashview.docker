@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-runtime-ubuntu16.04
+FROM ruby:2.2-slim
 ENV http_proxy=
 ENV https_proxy=
 ENV DEBIAN_FRONTEND noninteractive
@@ -13,13 +13,13 @@ git submodule update --init
 RUN cd hashcat
 RUN ln -s /root/hashcat/hashcat-cli64.bin /usr/bin/hashcat
 WORKDIR /tmp/
-RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
-RUN tar xvfz ruby-2.2.2.tar.gz
-WORKDIR /tmp/ruby-2.2.2/
-RUN ./configure
-RUN make
-RUN make install
-RUN gem update --system
+#RUN wget ftp://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
+#RUN tar xvfz ruby-2.2.2.tar.gz
+#WORKDIR /tmp/ruby-2.2.2/
+#RUN ./configure
+#RUN make
+#RUN make install
+#RUN gem update --system
 WORKDIR / 
 RUN git clone https://github.com/hashview/hashview
 WORKDIR /hashview/
