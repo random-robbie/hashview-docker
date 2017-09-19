@@ -5,6 +5,8 @@
       - MYSQL_USER=hashview
       - MYSQL_PASSWORD=hashview
       - MYSQL_DATABASE=hashview
+    expose:
+      - "3306"
     restart: always
    hashview:
     build: .
