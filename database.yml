@@ -1,6 +1,6 @@
 production:
   adapter: mysql
-  hostname: "localhost"
+  hostname: "192.168.1.71"
   port: 3306
   user: "root"
   password: "hashview"
