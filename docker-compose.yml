@@ -17,7 +17,7 @@ services:
     depends_on:
       - mysql
     build: .
-	dockerfile: hashview.docker
+    dockerfile: hashview.docker
     container_name: hashview
     ports:
       - 4567:4567
