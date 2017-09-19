@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-  mysql:
+   mysql:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=hashview
       - MYSQL_USER=hashview
       - MYSQL_PASSWORD=hashview
       - MYSQL_DATABASE=hashview
-   restart: always
+    restart: always
    hashview:
     build: .
     container_name: hashview
